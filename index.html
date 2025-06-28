@@ -1,23 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="kadam-verification" content="kadamfb60a4b1ff960a7bebb52099d4246918" />
-    <meta name="ppck-ver" content="8021cb6223ef3ca51176b4a2f7734005" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viral Vibe - The Pulse of Entertainment</title>
+    <meta name="description" content="Your ultimate source for the latest entertainment news, in-depth movie reviews, exclusive celebrity interviews, and the hottest trends in gaming and music.">
+    <meta name="keywords" content="entertainment, movies, tv shows, celebrity news, gaming, music, pop culture, viral trends">
 
-    <title>Fk3581808's Main Portfolio</title>
-    <meta name="description" content="Welcome to my main landing page on GitHub.">
-    <meta name="keywords" content="portfolio, developer, fk3581808">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- === POPCASH AD CODE GOES HERE === -->
+    <!-- IMPORTANT: Replace this comment with the actual code from your PopCash account before applying for approval. -->
+    <script type="text/javascript">
+      //  var popcash_url = 'https://popcash.net/pop'; // This is an EXAMPLE, use your own.
+    </script>
+    <!-- === END OF AD CODE SECTION === -->
+
+    <style>
+        /* --- General Styling & Setup --- */
+        :root {
+            --primary-color: #ff4500; /* OrangeRed */
+            --secondary-color: #7A00CC; /* Deep Purple */
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --border-color: #2a2a2a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--text-primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 2.5rem 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background: var(--card-bg);
+            border-bottom: 2px solid var(--primary-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .logo span { color: var(--primary-color); }
+
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        .main-nav a {
+            color: var(--text-primary);
+            font-weight: 600;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .mobile-menu-toggle { display: none; }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.9)), url('https://images.pexels.com/photos/7991579/pexels-photo-7991579.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            padding: 5rem 0;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+        }
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: auto;
+        }
+
+        /* --- Main Content Grid --- */
+        .posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .post-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .post-card-image {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .post-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-category {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--text-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            align-self: flex-start;
+        }
+
+        .post-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            flex-grow: 1;
+        }
+        .post-title a { color: var(--text-primary); }
+
+        .post-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+        .post-meta span { margin-right: 1rem; }
+        .post-meta .fa-solid { margin-right: 5px; color: var(--primary-color); }
+        
+        /* --- Footer --- */
+        .site-footer {
+            background-color: var(--card-bg);
+            color: var(--text-secondary);
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+            border-top: 2px solid var(--border-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-widget h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        .footer-widget p, .footer-widget li { margin-bottom: 0.5rem; }
+        .footer-widget ul { list-style: none; }
+        .footer-widget a { color: var(--text-secondary); }
+        .footer-widget a:hover { color: var(--primary-color); }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+        
+        /* --- Responsive Design --- */
+        @media(max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+            .main-nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                overflow: hidden;
+                max-height: 0;
+                transition: max-height 0.4s ease-in-out;
+            }
+            .main-nav.active {
+                max-height: 300px; /* Adjust as needed */
+            }
+            .main-nav ul {
+                flex-direction: column;
+                padding: 1rem;
+                align-items: center;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Welcome to my Main Domain!</h1>
-    <p>This is the homepage for https://fk3581808.github.io.</p>
-    <p>
-        Check out my other project here:
-        <a href="https://fk3581808.github.io/repository_name/">My Project</a>
-    </p>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">Viral<span>Vibe</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">TV Shows</a></li>
+                    <li><a href="#">Gaming</a></li>
+                    <li><a href="#">Music</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>The Pulse of Entertainment</h1>
+                <p>From blockbuster hits to indie gems, we cover the stories, stars, and sounds that are shaping our culture. Welcome to your daily obsession.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Fresh Off The Press</h2>
+            <div class="posts-container">
+                
+                <!-- POST 1 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/3137890/pexels-photo-3137890.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sci-fi movie poster" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Movies</span>
+                        <h3 class="post-title"><a href="#">'Nova Directive' Review: A Mind-Bending Sci-Fi Masterpiece</a></h3>
+                        <p class="post-excerpt">The latest sci-fi epic challenges perceptions of time and reality, delivering stunning visuals and a story that will stick with you long after the credits roll.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Alex Chen</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 28, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- POST 2 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/1648377/pexels-photo-1648377.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Musician on stage" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Music</span>
+                        <h3 class="post-title"><a href="#">Acoustic Gold: The Unplugged Album That's Topping the Charts</a></h3>
+                        <p class="post-excerpt">Indie sensation 'Luna Bloom' strips back her electronic sound for a raw, emotional acoustic album that has captivated listeners worldwide.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Brenda Miles</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 27, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 3 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/4009409/pexels-photo-4009409.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Person playing a video game" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Gaming</span>
+                        <h3 class="post-title"><a href="#">'Echoes of Aethel' Sells 5 Million Copies in First Weekend</a></h3>
+                        <p class="post-excerpt">The sprawling fantasy RPG has shattered sales records, proving that single-player story-driven games are far from dead. Here's our first impressions.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Kenji Tanaka</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 27, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 4 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/7234322/pexels-photo-7234322.jpeg?auto=compress&cs=tinysrgb&w=600" alt="TV show poster" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">TV Shows</span>
+                        <h3 class="post-title"><a href="#">Why 'The Gilded Cage' Is The Most Talked-About Show of the Summer</a></h3>
+                        <p class="post-excerpt">This historical drama combines lavish costumes with sharp political intrigue, making it the must-watch series of the season. The finale left us speechless.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Maria Garcia</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 26, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- POST 5 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/262488/pexels-photo-262488.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Celebrity on a red carpet" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Celebrity</span>
+                        <h3 class="post-title"><a href="#">Exclusive Interview: The Star of 'Nova Directive' on Stunts and Stardom</a></h3>
+                        <p class="post-excerpt">We sit down with lead actor Leo Vance to discuss the intense physical training for his latest role and how he handles the pressures of Hollywood.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> David Lee</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 25, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 6 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Concert crowd" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Music</span>
+                        <h3 class="post-title"><a href="#">Festival Season is Back: A Guide to the Year's Biggest Music Events</a></h3>
+                        <p class="post-excerpt">From Coachella to Glastonbury, we break down the lineups, ticket info, and must-see acts for the biggest music festivals of 2025.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Brenda Miles</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 24, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- POST 7 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Person watching a movie at home" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Movies</span>
+                        <h3 class="post-title"><a href="#">The Hidden Gems on Netflix You Haven't Watched Yet</a></h3>
+                        <p class="post-excerpt">Tired of scrolling? We've compiled a list of incredible, under-the-radar films hiding in plain sight on the streaming giant.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Alex Chen</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 23, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- POST 8 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Esports gaming arena" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Gaming</span>
+                        <h3 class="post-title"><a href="#">Inside the High-Stakes World of Professional Esports</a></h3>
+                        <p class="post-excerpt">Multi-million dollar prizes, intense training regimes, and global stardom. This is what it takes to be a pro gamer in 2025.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Kenji Tanaka</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 22, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 9 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/257904/pexels-photo-257904.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Animated series still" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">TV Shows</span>
+                        <h3 class="post-title"><a href="#">Is Adult Animation Entering a New Golden Age?</a></h3>
+                        <p class="post-excerpt">With a slate of critically acclaimed new shows, animated series for adults are tackling complex themes and earning mainstream respect.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Maria Garcia</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 21, 2025</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- POST 10 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Vinyl record player" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Music</span>
+                        <h3 class="post-title"><a href="#">The Resurgence of Vinyl: Why Analog is Thriving in a Digital World</a></h3>
+                        <p class="post-excerpt">Vinyl record sales continue to climb. We explore the reasons behind the format's comeback and what it means for the future of music.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Brenda Miles</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 20, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 11 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/6897931/pexels-photo-6897931.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Film camera" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Movies</span>
+                        <h3 class="post-title"><a href="#">Director's Commentary: The Art of the Practical Effect</a></h3>
+                        <p class="post-excerpt">In an age of CGI, one acclaimed director is making a powerful case for the magic of practical, in-camera effects. We explore their latest work.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Alex Chen</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 19, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- POST 12 -->
+                <article class="post-card">
+                    <img src="https://images.pexels.com/photos/3945667/pexels-photo-3945667.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Virtual reality headset" class="post-card-image">
+                    <div class="post-card-content">
+                        <span class="post-category">Gaming</span>
+                        <h3 class="post-title"><a href="#">The Future of Gaming is Here: Top 5 VR Experiences of the Year</a></h3>
+                        <p class="post-excerpt">Virtual reality is more immersive than ever. We count down the most breathtaking and innovative VR games that you have to play to believe.</p>
+                        <div class="post-meta">
+                            <span><i class="fa-solid fa-user"></i> Kenji Tanaka</span>
+                            <span><i class="fa-solid fa-calendar-days"></i> Jun 18, 2025</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-widget">
+                    <h4>About ViralVibe</h4>
+                    <p>ViralVibe is the premier destination for pop culture aficionados. We are dedicated to providing fast, fun, and factual entertainment news that keeps you in the loop.</p>
+                </div>
+                <div class="footer-widget">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Movies & Film</a></li>
+                        <li><a href="#">Television Series</a></li>
+                        <li><a href="#">Video Games & Esports</a></li>
+                        <li><a href="#">Music & Artists</a></li>
+                        <li><a href="#">Celebrity News</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Follow Us</h4>
+                    <p>Stay connected for the latest updates.</p>
+                    <!-- Social media links would go here -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViralVibe. All Rights Reserved. This is a template site for demonstration.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
